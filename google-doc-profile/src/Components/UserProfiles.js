@@ -76,7 +76,7 @@ const People = [
 const UserProfiles = () => {
 
     const [userProfile, setUserProfile] = useState(" ")
-    const [filteredProfile, setFilteredProfile] = useState(" ")
+    //const [filteredProfile, setFilteredProfile] = useState(" ")
 
 
     const handleChange = (event)=>{
@@ -86,7 +86,7 @@ const UserProfiles = () => {
   return (
     <div className='container'>
         <input className='filter' type='text' placeholder='Search by name...' value={userProfile} onChange={handleChange}/>
-        <p>{filteredProfile}</p>
+        <p>{userProfile}</p>
         <div className='userprofile'>
             <ul className='userdetails'>
                 {People.map((profile)=> {
