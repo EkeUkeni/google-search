@@ -93,7 +93,7 @@ const UserProfiles = () => {
                     const {id, title, firstName, lastName, picture} = profile;
                     return <li className='userlists' key={id}>
                         <div className='usertitle'>
-                            <div><img src={picture}/></div>
+                            <div><img src={picture} alt='icon'/></div>
                             <div>
                                 <p> {id}</p>
                                 <span> {title}</span>
