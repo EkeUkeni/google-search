@@ -3,9 +3,7 @@ import UserProfiles from './Components/UserProfiles'
 
 const GoogleDoc = () => {
   return (
-    <div>
-       <UserProfiles/>
-    </div>
+    <UserProfiles />
   )
 }
 

@@ -1,48 +1,39 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { People } from './People'
+import Input from './Input'
+import ProfileList from './ProfileList'
 
 
 const UserProfiles = () => {
 
-    const [userProfile, setUserProfile] = useState(" ")
-    
+    const [entry, setEntry] = useState("")
 
-    const handleChange = (event)=>{
+
+    const handleChange = (event) => {
         const userName = event.target.value
-        setUserProfile(userName)
+        setEntry(userName)
     }
 
-    // const filteredProfiles =People.filter((person)=> person.firstName.toLowerCase().includes(userProfile.toLowerCase()))
-
-    const filteredProfiles = People.filter((person)=>{
+    const filteredProfiles = People.filter((person) => {
         const fullName = `${person.firstName} ${person.lastName}`;
-        return fullName.toLowerCase().includes(userProfile.toLowerCase());
-        
+        return fullName.toLowerCase().includes(entry.toLowerCase());
+
     });
-    
-  return (
-    <div className='container'>
-        <div className='userprofile'>
-            <input className='filter' type='text' placeholder='Search by name...' value={userProfile} onChange={handleChange}/>
-            <ul className='userdetails'>
-                {filteredProfiles.map((users) => {
-                    return(<li className='userlists' key={users.id}>
-                        
-                        <div className='usertitle'>
-                                <div><img className='picture' src={users.picture} alt='icon'/></div>
-                                <div>
-                                    <p> {users.id}</p>
-                                    <span className='useridentity'> {users.title}</span>
-                                    <span className='useridentity'> {users.firstName}</span>
-                                    <span className='useridentity'> {users.lastName}</span>
-                                </div>
-                            </div>
-                    </li>)
-                })}
-            </ul>
+
+
+    return (
+        <div className='container'>
+            <div className='userprofile'>
+
+                <Input
+                    inputValue={entry} // going inside input
+                    onEntryChange={handleChange} // coming out of the input
+                />
+
+                <ProfileList profiles={filteredProfiles} />
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default UserProfiles
