@@ -6,14 +6,20 @@
   box-sizing: border-box;
 }
 body {
-   height: 100vh;
-  
+  height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgb(240, 215, 104),
+    rgb(243, 114, 157),
+    rgb(183, 48, 93)
+  );
 }
+
+/* use grid here  */
 .container {
   width: 60%;
   top: 40%;
   left: 50%;
-  background: linear-gradient(0deg, rgb(240, 215, 104), rgb(243, 114, 157), rgb(183, 48, 93) );
   min-width: 450px;
   position: absolute;
   min-height: 100px;
@@ -21,7 +27,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.filter{
+.filter {
   margin: 10px 50px;
   font-weight: 500;
   font-size: 16px;
@@ -34,12 +40,12 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.userprofile{
+.userprofile {
   align-content: center;
   margin-bottom: 40px;
 }
 
-.userdetails{
+.userdetails {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -47,28 +53,26 @@ body {
   width: 90px;
   margin: auto 55px;
 }
-.userlists{
-  font-family:sans-serif;
+.userlists {
+  font-family: sans-serif;
   font-size: 14px;
   border: 1px ridge rgb(237, 236, 236);
   border-radius: 4px;
   background: #d1d3d4;
   padding-right: 70px;
-  
 }
 
-.usertitle{
-  display: flex; 
+.usertitle {
+  display: flex;
   gap: 10px;
   padding: 5px;
 }
 
-.useridentity{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.useridentity {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.picture{
+.picture {
   width: 50px;
   height: 50px;
-
 }
